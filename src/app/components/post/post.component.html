@@ -1,0 +1,40 @@
+<div class="selector">
+  <button mat-raised-button (click)="changeForm()" [color]="formNumber">Book</button>
+  <button mat-raised-button (click)="changeForm()" [color]="formNumber1">Persons</button>
+</div>
+
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" *ngIf="formNumber === 'primary'">
+  <mat-form-field>
+    <input matInput type="number" placeholder="Enter book ID" formControlName="bookID">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Enter book title" formControlName="bookTitle">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="Number of Pages" formControlName="bookPages">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="Number of Copies" formControlName="bookCopies">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Enter GENRE" formControlName="bookGenre">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput type="text" placeholder="Enter a short resume" rows="4" columns="25" formControlName="bookResume"></textarea>
+  </mat-form-field>
+  <button mat-raised-button type="submit" color="primary" [disabled]="!bookForm.valid">Submit</button>
+</form>
+
+
+<form [formGroup]="personForm" (ngSubmit)="onSubmit1()" *ngIf="formNumber1 === 'primary'">
+  <mat-form-field>
+    <input matInput type="number" placeholder="Enter person ID" formControlName="personID">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Enter person name" formControlName="personName">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="Person Phone number" formControlName="personPhone">
+  </mat-form-field>
+  <button mat-raised-button type="submit" color="primary" [disabled]="!personForm.valid">Submit</button>
+</form>

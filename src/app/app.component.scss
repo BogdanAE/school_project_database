@@ -1,0 +1,64 @@
+@import './colors.scss';
+
+
+.container {
+    position: relative;
+    // height: calc(100vh - 5px);
+    // width: calc(100vw - 5px);
+    height: 100vh;
+    width: 100vw;
+    
+    .side {
+        position: absolute;
+        width: 250px;
+        height: 100%;
+        background-color: $brown;
+        text-align: center;
+        .btnContainer{
+            position: relative;
+            top: 35%;
+        }
+        button{
+            background: $lightblue;
+            color: $brown;
+            width: 100%;
+            margin: 10px 0;
+            &:hover{
+                background-color: $lightgreen;
+                color: $blue;
+            }
+        }
+        &>a{
+            transition: 0.2s linear;
+            user-select: none;
+            position: absolute;
+            width: 75px;
+            margin-top: 50px;
+            left: calc(30%);
+            background-color: $red;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 20px;
+            line-height: 26px;
+            vertical-align: middle;
+            color: $brown;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px gray;
+            &:hover {
+                background: $blue;
+                color: $lightgreen;
+                box-shadow: 3px 3px 3px orangered;
+            }
+        }
+    }
+    .infoContainer{
+        position: absolute;
+        right: 0;
+        width: calc(100% - 250px);
+        height: 100%;
+        background: whitesmoke;
+    }
+}
+
+

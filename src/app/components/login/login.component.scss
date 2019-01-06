@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  width: 70vw;
+  margin-left: 0vw;
+  height: 80vh;
+  margin-top: 9vh;
+  img {
+    position: relative;
+    margin-left: 5%;
+    width: 65%;
+    height: 100%;
+    float: left;
+  }
+  .col2{
+    padding-left: 5%;
+    width: 25%;
+    float:left;
+  }
+}
+
+input{
+  height: 40px;
+}
+
+::placeholder  {
+  // color: rgba(89, 168, 247, 0.33);
+  color: red;
+}
+
+.formContainer {
+  margin-top: calc(50vh/2 - 80px);
+  p{
+    color: red;
+    font-weight: bold;
+    width: 100%;
+  }
+}
+
+.selectorContainer > button {
+  background-color: rgba(54, 160, 201, 0.1);  
+  border: 1px solid rgba(89, 168, 247, 0.33);
+  width: 100%;
+}
+

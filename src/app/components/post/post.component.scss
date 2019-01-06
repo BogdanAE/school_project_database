@@ -1,0 +1,18 @@
+.selector{
+    button{
+        width: 50%;
+    }
+}
+
+form {
+    width: 75%;
+    margin-left: 12.5%;
+    mat-form-field{
+        float:left;
+        width: 100%;
+    }
+    button{
+        position: relative;
+        left: 45%;
+    }
+}

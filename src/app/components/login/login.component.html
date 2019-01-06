@@ -1,0 +1,19 @@
+<div class="container" fxLayout="row" fxLayoutGap="10px">
+  <img src="../../../assets/lib.jpg" fxFlex="25%">
+  <div class="col2" fxFlex>
+    <div class="selectorContainer" fxLayout="row" fxLayoutGap="5px">
+      <button mat-button fxFlex="50%"   [ngStyle]="{'background-color': this.loginService.state ? 'rgba(89, 168, 247, 0.33)' : 'transparent'}">Login</button>
+    </div>
+
+    <div class="formContainer" fxLayout="column" *ngIf="!this.loginService.state">
+      <mat-form-field>
+        <input fxFlex="50%" matInput placeholder="email" matAutosizeMinRows="1" matAutosizeMaxRows="4" #email (input)="this.loginService.loginEmail($event)">
+      </mat-form-field>
+      <mat-form-field>
+        <input fxFlex matInput placeholder="password" type="password" #password (input)="this.loginService.loginPass($event)">
+      </mat-form-field>
+      <p>{{announce}}</p>
+    </div>
+      <button mat-raised-button (click)="fnc()" [disabled]="this.loginService.disableButton">{{this.loginService.textButton}}</button>
+  </div>
+</div>

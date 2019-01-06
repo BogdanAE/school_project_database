@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card class="left">
+    <h4>Să se găsească titlul cărților cele mai împrumutate.</h4>
+    <div class="results" *ngIf="displayedColumns1">
+      <table mat-table [dataSource]="titles" class="mat-elevation-z8">
+        <ng-container [matColumnDef]="displayedColumns1[0]">
+          <th mat-header-cell *matHeaderCellDef> {{displayedColumns1[0]}} </th>
+          <td mat-cell *matCellDef="let tit"> {{tit.titlu}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+      </table>
+    </div>
+    <button mat-raised-button (click)="getMostLend()">Submit</button>
+  </mat-card>
+  <mat-card class="right">
+    <h4>Să se găsească numărul de pagini mediu pentru fiecare gen.</h4>
+    <div class="results" *ngIf="displayedColumns2">
+      <table mat-table [dataSource]="pages" class="mat-elevation-z8">
+        <ng-container [matColumnDef]="displayedColumns2[0]">
+          <th mat-header-cell *matHeaderCellDef> {{displayedColumns2[0]}} </th>
+          <td mat-cell *matCellDef="let page"> {{page.gen}} </td>
+        </ng-container>
+        <ng-container [matColumnDef]="displayedColumns2[1]">
+          <th mat-header-cell *matHeaderCellDef> {{displayedColumns2[1]}} </th>
+          <td mat-cell *matCellDef="let page"> {{page.nr_pag}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+      </table>
+    </div>
+    <button mat-raised-button (click)="getAveragePages()">Submit</button>
+  </mat-card>
+</mat-card>

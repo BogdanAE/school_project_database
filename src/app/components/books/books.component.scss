@@ -1,0 +1,54 @@
+@import '../../colors.scss';
+
+button {
+    width: calc(100%/4);
+    min-width: 75px;
+    overflow: hidden;
+    background: $blue;
+    color: white;
+    &:hover{
+        transition: 0.2s linear;
+        background-color: $brown;
+        color: $blue;;
+    }
+}
+.results {
+    width: 100%;
+    height: auto;
+    button {
+        margin: 25px 0;
+        position: relative;
+        left: 40%;
+    }
+    mat-form-field{
+        margin: 25px 0;
+        left: 35%;
+        width: 30%;
+    }
+    form{
+        p{
+            position: relative;
+            border: 1px solid $red;
+            left: 35%;
+            width: 30%;
+            text-align: center;
+            font-family: Roboto,"Helvetica Neue",sans-serif;
+        }
+    }
+    table {
+        position: relative;
+        margin: 10px 0;
+        width: 75%;
+        left: 12.5%;
+        th{
+            text-align: center;
+        }
+        tr{
+            margin: 10px 0;
+        }
+        td{
+            text-align: center;
+        }
+    }
+}
+

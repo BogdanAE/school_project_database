@@ -1,0 +1,41 @@
+mat-card{
+  width: 75%;
+  left: 12.5%;
+  margin: 50px 0;
+  p{
+    margin: 15px 0;
+    text-align: center;
+  }
+  button {
+    margin: 10px 0;
+    left: 45%;
+  }
+  form {
+    button{
+      text-align: center;
+      width: 100px;
+      margin: 10px 0;
+      position: relative;
+      left: calc(50% - 50px);
+    }
+  }
+}
+.results {
+  width: 100%;
+  height: auto;
+  table {
+    position: relative;
+    margin: 10px 0;
+    width: 75%;
+    left: 12.5%;
+    th{
+        text-align: center;
+    }
+    tr{
+        margin: 10px 0;
+    }
+    td{
+        text-align: center;
+    }
+}
+}

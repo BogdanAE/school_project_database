@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="side" *ngIf="this.loginService.allow">
+        <a [routerLink]="['home']">
+            Home
+        </a>
+        <div class="btnContainer">
+            <a [routerLink]="['books']">
+                <button mat-raised-button>Books</button>
+            </a>
+            <a [routerLink]="['author']">
+                <button mat-raised-button>Author</button>
+            </a>
+            <a [routerLink]="['statistics']">
+                <button mat-raised-button>Book statistics</button>
+            </a>
+            <a [routerLink]="['post']">
+                <button mat-raised-button>Add DATA</button>
+            </a>
+        </div>
+    </div><!-- end side -->
+
+    <div class="infoContainer">
+        <app-info></app-info>
+    </div><!-- end info -->
+</div>

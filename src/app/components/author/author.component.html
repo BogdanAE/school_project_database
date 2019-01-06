@@ -1,0 +1,54 @@
+<mat-card>
+  <form>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Select Book title
+          </mat-panel-title>
+          <mat-panel-description>
+            Select the book that you wish to see the author for
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-select placeholder="Select Book title" [(value)]="value">
+            <mat-option *ngFor="let book of books" [value]='book.titlu'>
+              {{book.titlu}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-expansion-panel>
+      <p>
+        selection is <b>{{ value }}</b>
+      </p>
+    </mat-accordion>
+    <div class="results" *ngIf="displayedColumns1">
+      <table mat-table [dataSource]="author" class="mat-elevation-z8">
+        <ng-container [matColumnDef]="displayedColumns1[0]">
+          <th mat-header-cell *matHeaderCellDef> {{displayedColumns1[0]}} </th>
+          <td mat-cell *matCellDef="let auth"> {{auth.nume}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+      </table>
+    </div>
+    <button mat-raised-button color="accent" type="submit" (click)="getAuthor()" [disabled]="!value">Show result</button>
+  </form>
+</mat-card>
+
+<mat-card>
+  <p>
+    <b>Display Book with multiple authors</b>
+  </p>
+  <div class="results" *ngIf="displayedColumns2">
+    <table mat-table [dataSource]="uBooks" class="mat-elevation-z8">
+      <ng-container [matColumnDef]="displayedColumns2[0]">
+        <th mat-header-cell *matHeaderCellDef> {{displayedColumns2[0]}} </th>
+        <td mat-cell *matCellDef="let book"> {{book.id_carte}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+    </table>
+  </div>
+  <button mat-raised-button (click)="getMultipleAuthors()">Submit</button>
+</mat-card>
